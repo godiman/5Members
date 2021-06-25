@@ -1,0 +1,46 @@
+<%- include('../template/head'); %> 
+
+<% var error; %> 
+<% var success; %> 
+<% var st_id; %>
+
+<% if (error) { %>
+    <script>   
+      let err = '<%= error %>';                     
+      swal({
+        title: err,
+        text: "An Error occur",
+        icon: "warning",
+        button: "Try agin",
+      })
+    </script>                
+<% } %>   
+
+<% if (success) { %>
+    <script>   
+      let msg = '<%= success %>';                     
+      swal({
+        title: msg,
+        text: "Changes made",
+        icon: "success",
+      })
+    </script>                
+<% } %>   
+    
+<div class="row">
+    <div class="col-md-3"></div>
+        <div class="login col-md-6 mt-4">
+        <h2 class="text-primary">Reply</h2>
+            <form method="POST" action="/post-reply" class="row">
+                <div class="col-12">
+                    <input type="text"  name="stud_id"  value="<%=st_id;%>">
+                    <textarea rows="2" type="text" cols="1" name="msg" placeholder="Write text here" class="form-control mb-3"></textarea>                   
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">REPLY</button>
+                </div>
+            </form>
+        </div>  
+    <div class="col-md-3"></div>  
+</div>
+<%- include('../template/script') %> 

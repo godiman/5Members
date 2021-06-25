@@ -1,0 +1,62 @@
+<%- include('../template/head') %> 
+<%- include('../dashboard.inc/navbar') %> 
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="notice.html">Notice</a></li>
+          <li class="list-inline-item text-white h3 font-secondary nasted">Notice Details</li>
+        </ul>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- notice details -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex">
+          
+          <!-- notice content -->
+
+          <% if (notice) { %>
+
+                <% notice.forEach(n => { %>
+                    <div class="text-center mr-4">
+                        <div class="p-4 bg-primary text-white">
+                            <span class="h2 d-block"><%= n.date_sent.getDate() %> </span> <%= n.date_sent.getUTCMonth()+1 %> : <%= n.date_sent.getUTCFullYear() %>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="mb-4 text-uppercase"><%= n.notice_title; %> </h3>
+                        <div class="embed-responsive embed-responsive-21by9" style="height: 500px;">
+                            <iframe class="embed-responsive-item" src="<%= `http://localhost:5000/notice_file/${n.content}` %>" allowfullscreen></iframe>
+                        </div>
+                        <p><%= n.notice_desc; %> </p>                        
+                        <a href="http://localhost:5000/notice_file/<%= n.content %> " class="btn btn-primary">Download Here</a>
+                    </div>
+                <% }) %>
+           
+          <% } %>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /notice details -->
+
+
+
+
+
+<%- include('../dashboard.inc/footer') %> 
+<%- include('../template/script') %> 

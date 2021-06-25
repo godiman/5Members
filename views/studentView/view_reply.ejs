@@ -1,0 +1,79 @@
+<%- include('../template/head') %> 
+<%- include('../dashboard.inc/navbar') %> 
+<%- include('../template/login_modal'); %> 
+
+<% var error; %> 
+<% var success; %> 
+<% var m; %> 
+
+<% if (error) { %>
+    <script>   
+      let err = '<%= error %>';                     
+      swal({
+        title: err,
+        text: "An Error occur",
+        icon: "warning",
+        button: "Try agin",
+      })
+    </script>                
+<% } %>   
+
+<% if (success) { %>
+    <script>   
+      let msg = '<%= success %>';                     
+      swal({
+        title: msg,
+        text: "Changes made",
+        icon: "success",
+      })
+    </script>                
+<% } %>   
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Reply</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+
+<!-- notice -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="list-unstyled">
+              
+        <% if (m) { %>
+          <% m.forEach(n => { %>
+               <!-- notice item -->
+              
+                <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+                  <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h3 d-block"><%= n.date_sent.getDate() %></span><%= n.date_sent.getUTCMonth()+1 %> : </span><%= n.date_sent.getFullYear() %>  </div>
+                  <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+                    <p class="mb-0"><%= n.content %> </p>
+                    <p class="mb-0 text-danger"> Reply: <%= n.reply %> </p>
+                  </div>
+                </li>
+          <% }) %>
+        <% } %>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /notice -->
+
+<%- include('../dashboard.inc/footer') %> 
+<%- include('../template/script') %> 

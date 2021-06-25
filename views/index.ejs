@@ -1,0 +1,237 @@
+
+
+<%# Includes the header files %> 
+<%- include('template/head'); %> 
+
+<%# Includes navigation %> 
+<%- include('template/navbar'); %> 
+
+<%# Includes login and registration model %> 
+<%- include('template/login_modal'); %>
+
+<% var error; %> 
+<% var success; %> 
+
+<% if (error) { %>
+    <script>   
+      let err = '<%= error %>';                     
+      swal({
+        title: err,
+        text: "An Error occur",
+        icon: "warning",
+        button: "Try agin",
+      })
+    </script>                
+<% } %>   
+
+<% if (success) { %>
+    <script>   
+      let msg = '<%= success %>';                     
+      swal({
+        title: msg,
+        text: "Your account is read",
+        icon: "success",
+        button: "Login",
+        successMode: true
+      })
+    </script>                
+<% } %>   
+
+<!-- hero slider -->
+<section class="hero-section overlay bg-cover" data-background="images/banner/banner-1.jpg">
+  <div class="container">
+    <div class="hero-slider">
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="4" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">AE-FUNAI COMPUTER SCIENCE DEPARTMENT</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="4" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".3">
+                AE-FUNAI is the home of soaring eagles......</p>
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".1">Your bright future is our mission</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="4" data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".3">
+              Knowlege is power..........</p>
+          </div>
+        </div>
+      </div>
+      <!-- slider item -->
+      <div class="hero-slider-item">
+        <div class="row">
+          <div class="col-md-8">
+            <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">Learn To Serve The Humanities</h1>
+            <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".3">
+             Problem solvers and great programmers.....</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /hero slider -->
+
+<!-- about banner-feature -->
+<section class="bg-gray overflow-md-hidden">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">   
+      <div class="col-xl-8 col-lg-7" >
+        <div class="row feature-blocks bg-gray justify-content-between"  id="about">
+            <div class="col-md-12 order-2 order-md-1 justify pb-4" >
+                <h2 class="section-title">About</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat </p>
+                <p>cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem</p>
+                
+            </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /banner-feature -->
+
+
+<!-- cta -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h6 class="text-white font-secondary mb-0">Click to Join the Advance Workshop</h6>
+        <h2 class="section-title text-white">Training In Advannce Programming</h2>
+        <a href="contact.html" class="btn btn-secondary">join now</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /cta -->
+
+
+<!-- events -->
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex align-items-center section-title justify-content-between">
+          <h2 class="mb-0 text-nowrap mr-3">Upcoming Events</h2>
+          <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+          <div>
+            <a href="events.html" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see all</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-1.jpg" alt="event thumb">
+        <div class="card-date"><span>18</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-2.jpg" alt="event thumb">
+        <div class="card-date"><span>21</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+  <!-- event -->
+  <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+    <div class="card border-0 rounded-0 hover-shadow">
+      <div class="card-img position-relative">
+        <img class="card-img-top rounded-0" src="images/events/event-3.jpg" alt="event thumb">
+        <div class="card-date"><span>23</span><br>December</div>
+      </div>
+      <div class="card-body">
+        <!-- location -->
+        <p><i class="ti-location-pin text-primary mr-2"></i>Dhanmondi Lake, Dhaka</p>
+        <a href="event-single.html"><h4 class="card-title">Lorem ipsum dolor amet, consectetur adipisicing.</h4></a>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- mobile see all button -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <a href="course.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /events -->
+
+<!-- teachers -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h2 class="section-title">Departmental Officers</h2>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">Dr. Mrs. Alo R.</h4>
+            </a>
+            <p>Head Of Department</p>
+          </div>
+        </div>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">Mr. Oketa C.</h4>
+            </a>
+            <p>Exams  Officer</p>
+          </div>
+        </div>
+      </div>
+      <!-- teacher -->
+      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+        <div class="card border-0 rounded-0 hover-shadow">
+          <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
+          <div class="card-body">
+            <a href="teacher-single.html">
+              <h4 class="card-title">Mr. Henry O.</h4>
+            </a>
+            <p>Lecturer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /teachers -->
+
+
+<%# Includes footer %> 
+<%- include('template/footer'); %> 
+
+<%# Includes all the js static file %> 
+<%- include('template/script'); %> 
+

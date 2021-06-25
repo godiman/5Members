@@ -1,0 +1,82 @@
+<%- include('../template/head') %> 
+<%- include('../dashboard.inc/super_nav'); %> 
+<%- include('../template/login_modal') %> 
+
+<% var error; %> 
+<% var success; %> 
+<% var u; %> 
+
+<% if (error) { %>
+    <script>   
+      let err = '<%= error %>';                     
+      swal({
+        title: err,
+        text: "An Error occur",
+        icon: "warning",
+        button: "Try agin",
+      })
+    </script>                
+<% } %>   
+
+<% if (success) { %>
+    <script>   
+      let msg = '<%= success %>';                     
+      swal({
+        title: msg,
+        text: "Changes made",
+        icon: "success",
+      })
+    </script>                
+<% } %>   
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Settings</a></li>
+          <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+        </ul>
+        <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- related course -->
+<section class="section pt-4">
+  <div class="container"></div>
+    <div class="row justify-content-center">
+      <!-- profile item -->
+      <div class="col-lg-3 col-sm-6 mb-5"></div>
+      <!-- course item -->
+      <div class="col-lg-6 col-sm-6 mb-5 " >
+        <div class="card p-0 border-primary rounded-1 hover-shadow bg-light">
+          <div class="card-body">
+            <a href="course-single.html">
+              <h4 class="card-title text-warning"><small><small><u>Profile</u></small></small></h4>
+            </a>
+            <% if (u) { %>
+              <% u.forEach(_u => { %>
+                <p class="card-text mb-4"><strong>Name:</strong> <span class="text-uppercase"><%= _u.name; %> </span> </p><hr>
+                <p class="card-text mb-4"><strong>Reg Number:</strong> <span class="text-uppercase"><%= _u.reg_no; %> </span></p><hr>
+                <p class="card-text mb-4"><strong>Phone Number: </strong> <%= _u.phone; %></p> <hr>
+              <% }) %>
+            <% } %>
+            <p class="card-text mb-4"> <a href="#" data-toggle="modal" data-target="#adminPasswordModel">Change your password</a></p>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 mb-5"></div>
+
+    </div>
+  </div>
+</section>
+<!-- /related course -->
+
+
+<%- include('../dashboard.inc/footer') %>
+<%- include('../template/script') %>

@@ -1,0 +1,256 @@
+<!-- Register Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form method="POST" action="/register" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" name="name" placeholder="Name" required>
+                        </div>
+                                      
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3"  name="regNo" placeholder="Reg No" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="number" class="form-control mb-3" name="phone" placeholder="Phone number" required>
+                            <input type="hidden" class="form-control mb-3" name="role" value="student" readOnly>
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" name="conPass" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Admin Registration Modal -->
+<div class="modal fade" id="adminSignupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Create New Admin</h3>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                <h6>Send registration link to the email you entered.</h6>
+                    <form method="POST" action="/create-admin" class="row">        
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3"  name="email" placeholder="Email" required>
+                        </div>
+                        <div class="col-12">
+                            <select class="form-control mb-3" name="role">
+                                <option class="form-control" value="">SELECT ROLE</option>
+                                <option class="form-control" value="hod">HOD</option>
+                                <option class="form-control" value="Lecturer">LECTURER</option>
+                            </select>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">CREATE</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/auth" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" name="regNo" placeholder="Reg. Number" reguired>
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Change password Modal -->
+<div class="modal fade" id="changePasswordModel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Change Password</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/change-password" class="row">
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="oldPass" placeholder="Old password" reguired>
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="newPass" placeholder="Create new password" required>
+                    </div>
+                     <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="confirmNew" placeholder="Confirm new password" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">CREATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Change password Modal -->
+<div class="modal fade" id="adminPasswordModel" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Change Password</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/update-password" class="row">
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="oldPass" placeholder="Old password" reguired>
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="newPass" placeholder="Create new password" required>
+                    </div>
+                     <div class="col-12">
+                        <input type="password" class="form-control mb-3" name="confirmNew" placeholder="Confirm new password" required>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">CREATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- student notice Modal -->
+<div class="modal fade" id="studentNoticeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Student's Notice</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/student-notice" enctype="multipart/form-data" class="row">
+                    <div class="col-12">
+                        <input type="file" class="form-control mb-3" name="notice_file" placeholder="Notice body" required>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" name="noticeTitle" placeholder="Notice Title" reguired>
+                        <input type="hidden"  name="recipient" value="student" >
+                    </div>
+                    <div class="col-12">
+                        <textarea rows="2" cols="2" class="form-control mb-3" name="noticeDesc"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">PUBLISH</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- lecturer notice Modal -->
+<div class="modal fade" id="lecturerNoticeModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Lecturer's Notice</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/lecturer-notice" enctype="multipart/form-data" class="row">
+                    <div class="col-12">
+                        <input type="file" class="form-control mb-3" name="notice_file" placeholder="Notice body" required>
+                    </div>
+                    <div class="col-12">
+                        <input type="Text" class="form-control mb-3" name="noticeTitle" placeholder="Notice Title" reguired>
+                        <input type="hidden"  name="recipient" value="Lecturer" >
+                    </div>
+                    <div class="col-12">
+                        <textarea rows="2" cols="1" name="noticeDesc" class="form-control mb-3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">PUBLISH</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- student appointment Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Appointment</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="/student-appointment"  class="row">
+                    <div class="col-12">
+                        <input type="number" class="form-control mb-3" name="phone" placeholder="Lecturer's number" reguired>
+                    </div>
+                    <div class="col-12">
+                        <textarea rows="2" cols="1" name="content" placeholder="Write text here" class="form-control mb-3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">SEND</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

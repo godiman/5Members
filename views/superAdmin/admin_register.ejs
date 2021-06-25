@@ -1,0 +1,59 @@
+<%- include('../template/head'); %> 
+
+<% var error; %> 
+<% var success; %> 
+
+<% if (error) { %>
+    <script>   
+      let err = '<%= error %>';                     
+      swal({
+        title: err,
+        text: "An Error occur",
+        icon: "warning",
+        button: "Try agin",
+      })
+    </script>                
+<% } %>   
+
+<% if (success) { %>
+    <script>   
+      let msg = '<%= success %>';                     
+      swal({
+        title: msg,
+        text: "Changes made",
+        icon: "success",
+      })
+    </script>                
+<% } %>   
+    
+<div class="row">
+    <div class="col-md-3"></div>
+        <div class="login col-md-6 mt-4">
+        <h2 class="text-primary">Create Account</h2>
+            <form method="POST" action="/lect-account" class="row">
+                <div class="col-12">
+                    <input type="text" class="form-control mb-3" name="name" placeholder="Name" required>
+                </div>                      
+                <div class="col-12">
+                <input type="text" class="form-control mb-3"  name="regNo" placeholder="Staff ID" required>
+                </div>
+                <div class="col-12">
+                    <input type="number" class="form-control mb-3" name="phone" placeholder="Phone number" required>
+                </div>          
+                <div class="col-12">
+                <input type="number" class="form-control mb-3"  name="v_token" placeholder="Verification token" required>
+                </div>
+                <div class="col-12">
+                    <input type="password" class="form-control mb-3" name="password" placeholder="Password" required>
+                </div>
+                <div class="col-12">
+                    <input type="password" class="form-control mb-3" name="conPass" placeholder="Confirm Password" required>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">SIGN UP</button>
+                </div>
+            </form>
+        </div>  
+    <div class="col-md-3"></div>  
+</div>
+<%- include('../template/script') %> 
